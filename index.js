@@ -1,6 +1,6 @@
 
 require('dotenv/config');
-const { Client, IntentsBitField } = require('discord.js');
+const { Client, IntentsBitField, EmbedBuilder } = require('discord.js');
 const client = new Client({
   intents: [
     IntentsBitField.Flags.Guilds,
@@ -28,6 +28,14 @@ client.on('messageCreate', async (message) => {
 
   if (containsWordFromArray(message.content.toLowerCase(), keywords)) {
     message.reply("Please don't use the word 'guys' or 'everyone'! Use 'folks' or 'y'all' instead!");
+
+    const embed = new EmbedBuilder()
+      .setImage(
+        "attachment://agentThatha.jpeg"
+      )
+      .setTimestamp();
+
+    message.reply({ embeds: [embed], files: ['./images/agentThatha.jpeg'] });
   }
 });
 

@@ -8,7 +8,9 @@
     "start": "node index.js",
     "docker:build": "docker build . -t simple-discord-bot",
     "docker:run": "docker run -d --name discord-bot simple-discord-bot",
-    "docker:rerun": "docker stop discord-bot && docker rm discord-bot && docker rmi simple-discord-bot && yarn docker:build && yarn docker:run"
+    "docker:stop": "docker stop discord-bot && docker rm discord-bot && docker rmi simple-discord-bot",
+    "docker:start": "yarn docker:build && yarn docker:run",
+    "docker:rerun": "yarn docker:stop && yarn docker:start"
   },
   "keywords": [],
   "author": "KarthikReddyPuli",
