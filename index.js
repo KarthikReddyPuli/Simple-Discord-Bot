@@ -9,6 +9,7 @@ const client = new Client({
   ],
 });
 const keywords = ["guys", "everyone"];
+const ileana = ["ileana"]
 
 client.on('ready', () => {
   console.log('The bot is online!');
@@ -28,14 +29,17 @@ client.on('messageCreate', async (message) => {
 
   if (containsWordFromArray(message.content.toLowerCase(), keywords)) {
     message.reply("Please don't use the word 'guys' or 'everyone'! Use 'folks' or 'y'all' instead!");
+    message.reply("https://tenor.com/view/thatha-agent-thatha-thata-hyderabad-hyderabad-thatha-gif-13271246656811521377");
+  }
 
+  if (containsWordFromArray(message.content.toLowerCase(), ileana)) {
     const embed = new EmbedBuilder()
       .setImage(
-        "attachment://agentThatha.jpeg"
+        "attachment://ileana.jpeg"
       )
       .setTimestamp();
 
-    message.reply({ embeds: [embed], files: ['./images/agentThatha.jpeg'] });
+    message.reply({ embeds: [embed], files: ['./images/ileana.jpeg'] });
   }
 });
 
