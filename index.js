@@ -26,7 +26,7 @@ function containsWordFromArray(inputString, wordArray) {
 client.on('messageCreate', async (message) => {
   if (message.author.bot) return;
 
-  if (containsWordFromArray(message.content, keywords)) {
+  if (containsWordFromArray(message.content.toLowerCase(), keywords)) {
     message.reply("Please don't use the word 'guys' or 'everyone'! Use 'folks' or 'y'all' instead!");
   }
 });
