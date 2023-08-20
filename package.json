@@ -1,17 +1,22 @@
 {
-  "name": "gpt3.5",
+  "name": "simple-discord-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "docker:build": "docker build . -t simple-discord-bot",
+    "docker:run": "docker run -d --name discord-bot simple-discord-bot"
   },
   "keywords": [],
-  "author": "",
+  "author": "KarthikReddyPuli",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.7.1",
-    "dotenv": "^16.0.3",
-    "openai": "^3.2.1"
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
