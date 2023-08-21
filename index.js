@@ -8,7 +8,7 @@ const client = new Client({
     IntentsBitField.Flags.MessageContent,
   ],
 });
-const keywords = ["guys", "everyone"];
+const keywords = ["guys"];
 const ileana = ["ileana"]
 
 client.on('ready', () => {
@@ -28,7 +28,7 @@ client.on('messageCreate', async (message) => {
   if (message.author.bot) return;
 
   if (containsWordFromArray(message.content.toLowerCase(), keywords)) {
-    message.reply("Please don't use the word 'guys' or 'everyone'! Use 'folks' or 'y'all' instead!");
+    message.reply("Please don't use the word 'guys'! Use 'folks' or 'y'all' instead!");
     message.reply("https://tenor.com/view/thatha-agent-thatha-thata-hyderabad-hyderabad-thatha-gif-13271246656811521377");
   }
 
